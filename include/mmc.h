@@ -11,4 +11,14 @@
     address; \
 })
 
+/**
+ * Expects sizeof(value) <= sizeof(t)
+ */
+#define new_of_t(value, t) ({ \
+    t* address = malloc(sizeof(t)); \
+    assert(address != 0); \
+    *address = value; \
+    address; \
+})
+
 #endif
