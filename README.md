@@ -1,18 +1,36 @@
 ### Basic Type Inference
 ```c
-let four = new(4);
+#include "include/mmc.h"
+#include "include/var.h"
+#include "include/pp.h"
 
-// prints out 4
-printf("%d\n", *((int*) four->data));
-// prints out 0 (TYPE_INT value)
-printf("%d\n", four->type);
+int main(void) {
+    let four = new(4);
+    pprint_var(four);
 
-let pi = new(3.14f);
-// prints out 3.140000
-ppi->type = rintf("%f\n", *((float*) pi->data));
-// prints out 2 (TYPE_FLOAT value)
-printf("%d\n", pi->type);
+    // cast to char to prevent integer promotion
+    let letter = new((char)'A');
+    pprint_var(letter);
+
+    let pi = new(3.14f);
+    pprint_var(pi);
+
+    let e = new(2.718281828459045235360287471352);
+    pprint_var(e);
+
+    let long_number = new(123456789L);
+    pprint_var(long_number);
+}
 ``` 
+
+###### Output of this program looks like this:
+```
+var* 4 [TYPE_INT]
+var* A [TYPE_CHAR]
+var* 3.140000 [TYPE_FLOAT]
+var* 2.718282 [TYPE_DOUBLE]
+var* 123456789 [TYPE_LONG]
+```
 
 ##### TODO
 > Create generic printf to handle % formats generically

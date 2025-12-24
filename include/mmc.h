@@ -23,12 +23,15 @@
     address; \
 })
 
-#define new(value) ({ \
+#define new_of_primary_type(value) ({ \
         var* ptr = malloc(sizeof(var)); \
         assert(ptr != 0); \
         ptr->data = new_data(value); \
         ptr->type = type_to_DataType(value); \
         ptr; \
 })
+
+#define new(value) _Generic((value), \
+    default: new_of_primary_type(value))
 
 #endif

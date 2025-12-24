@@ -1,17 +1,22 @@
-#include <stdio.h>
-
 #include "include/mmc.h"
 #include "include/var.h"
+#include "include/pp.h"
 
 int main(void) {
     let four = new(4);
+    pprint_var(four);
 
-    printf("*((int*) four->data) = %d\n", *((int*) four->data));
-    printf("four->type = %d\n", four->type);
+    // cast to char to prevent integer promotion
+    let letter = new((char)'A');
+    pprint_var(letter);
 
     let pi = new(3.14f);
-    printf("*((float*) pi->data) = %f\n", *((float*) pi->data));
-    printf("pi->type = %d\n", pi->type);
-    
+    pprint_var(pi);
+
+    let e = new(2.718281828459045235360287471352);
+    pprint_var(e);
+
+    let long_number = new(123456789L);
+    pprint_var(long_number);
 }
 
