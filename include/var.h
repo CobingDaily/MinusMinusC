@@ -23,4 +23,6 @@ typedef struct var {
     long: TYPE_LONG, \
     default: TYPE_UNKNOWN)
 
+typedef var* let;
+
 #endif
