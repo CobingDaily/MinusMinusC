@@ -31,6 +31,3 @@ var* 3.140000 [TYPE_FLOAT]
 var* 2.718282 [TYPE_DOUBLE]
 var* 123456789 [TYPE_LONG]
 ```
-
-##### TODO
-> Create generic printf to handle % formats generically
