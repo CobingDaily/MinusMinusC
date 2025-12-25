@@ -18,5 +18,8 @@ int main(void) {
 
     let long_number = new(123456789L);
     pprint_var(long_number);
+
+    let string = new((char*)"Hello, World");
+    pprint_var(string);
 }
 

@@ -25,8 +25,12 @@ void pprint_var(var* variable) {
         case TYPE_LONG:
             printf("%ld [TYPE_LONG]\n", *((long*) variable->data));
             break; 
-
-
+        case TYPE_CHAR_PTR:
+            printf("\"%s\" [TYPE_CHAR_PTR]\n", *((char**) variable->data));
+            break; 
+        case TYPE_CONST_CHAR_PTR:
+            printf("\"%s\" [TYPE_CONST_CHAR_PTR]\n", *((const char**) variable->data));
+            break; 
         default:
             break;
     }

@@ -20,6 +20,11 @@ int main(void) {
 
     let long_number = new(123456789L);
     pprint_var(long_number);
+
+    // _Generic is stupid, the (const) char* cast is required
+    // Otherwise pass (const) char* variable as argument for new()
+    let string = new((char*)"Hello, World");
+    pprint_var(string);
 }
 ``` 
 
@@ -30,4 +35,5 @@ var* A [TYPE_CHAR]
 var* 3.140000 [TYPE_FLOAT]
 var* 2.718282 [TYPE_DOUBLE]
 var* 123456789 [TYPE_LONG]
+var* "Hello, World" [TYPE_CHAR_PTR]
 ```

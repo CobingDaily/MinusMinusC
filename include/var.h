@@ -7,6 +7,8 @@ typedef enum {
     TYPE_FLOAT,
     TYPE_DOUBLE,
     TYPE_LONG,
+    TYPE_CHAR_PTR,
+    TYPE_CONST_CHAR_PTR,
     TYPE_UNKNOWN
 } DataType;
 
@@ -21,6 +23,8 @@ typedef struct var {
     float: TYPE_FLOAT, \
     double: TYPE_DOUBLE, \
     long: TYPE_LONG, \
+    char*: TYPE_CHAR_PTR, \
+    const char*: TYPE_CONST_CHAR_PTR, \
     default: TYPE_UNKNOWN)
 
 typedef var* let;

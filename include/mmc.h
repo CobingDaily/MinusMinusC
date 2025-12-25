@@ -13,16 +13,6 @@
     address; \
 })
 
-/**
- * Expects sizeof(value) <= sizeof(t)
- */
-#define new_data_of_t(value, t) ({ \
-    t* address = malloc(sizeof(t)); \
-    assert(address != 0); \
-    *address = value; \
-    address; \
-})
-
 #define new_of_primary_type(value) ({ \
         var* ptr = malloc(sizeof(var)); \
         assert(ptr != 0); \
